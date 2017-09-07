@@ -150,10 +150,15 @@ INSERT INTO Borders(name, neighbor)
 VALUES('Switzerland','France');
 
 /*Germany's neighbors.*/
+
 SELECT neighbor FROM Borders WHERE name = 'Germany';
+
 /*Countries with over 35,000,000 people.*/
+
 SELECT name FROM Countries WHERE population > 35000000;
+
 /*Germany's neighbors with over 35,000,000 people.*/
+
 SELECT * FROM Countries
 INNER JOIN Borders ON Countries.name = Borders.name
 WHERE population > 35000000 AND Borders.neighbor = 'Germany';
