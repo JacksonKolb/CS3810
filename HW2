@@ -1,0 +1,159 @@
+/*
+CS 3810 - Database
+Jackson Kolb and Max Morrison
+HW2
+DUE 9/7/2017 
+*/
+
+/* Creates Countries Table, with the name as the PRIMARY KEY
+*/
+CREATE TABLE Countries (
+    name VARCHAR(20) PRIMARY KEY, 
+    latitude INT, 
+    longitude INT, 
+    area INT, 
+    population INT, 
+    gdp BIGINT, 
+    gdpYear INT
+);
+
+/* Creates Border Table, which uses serial to auto handle the PRIMARY KEY.
+*  Foriegn keys name and border country are used to interact with the Countries
+*  Table.
+*/
+CREATE TABLE Borders (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(20) references Countries(name),
+    borderCountry VARCHAR(20) references Countries(name)
+);
+
+/*Fills both Tables with the neccessary data from CIA.GOV
+*/
+INSERT INTO Countries (name, latitude, longitude, area, population, gdp, gdpYear)
+VALUES ('Germany', 900, 5100, 357022, 80594017, 3979000000000, 2016);
+INSERT INTO Countries (name, latitude, longitude, area, population, gdp, gdpYear)
+VALUES ('Netherlands', 545, 5230, 41543, 17084719, 870800000000, 2016);
+INSERT INTO Countries (name, latitude, longitude, area, population, gdp, gdpYear)
+VALUES ('Belgium', 400, 5050, 30528, 11491346, 508600000000, 2016);
+INSERT INTO Countries (name, latitude, longitude, area, population, gdp, gdpYear)
+VALUES ('Luxemburg', 610, 4945, 2586, 594130, 58740000000, 2016);
+INSERT INTO Countries (name, latitude, longitude, area, population, gdp, gdpYear)
+VALUES ('Poland', 2000, 5200, 312685, 38476269, 1052000000000, 2016);
+INSERT INTO Countries (name, latitude, longitude, area, population, gdp, gdpYear)
+VALUES ('Czech Republic', 1530, 4945, 78867, 10674723, 350900000000, 2016);
+INSERT INTO Countries (name, latitude, longitude, area, population, gdp, gdpYear)
+VALUES ('Austria', 1320, 4720, 83871, 8754413, 416600000000, 2016);
+INSERT INTO Countries (name, latitude, longitude, area, population, gdp, gdpYear)
+VALUES ('France', 200, 4600, 643801, 67106161, 2699000000000, 2016);
+INSERT INTO Countries (name, latitude, longitude, area, population, gdp, gdpYear)
+VALUES ('Switzerland', 800, 4700, 41277, 8236303, 496300000000, 2016);
+
+/*Germany*/
+
+INSERT INTO Borders(name, borderCountry)
+VALUES ('Germany', 'Netherlands');
+INSERT INTO Borders(name, borderCountry)
+VALUES ('Germany', 'Belgium');
+INSERT INTO Borders(name, borderCountry)
+VALUES ('Germany', 'Luxemburg');
+INSERT INTO Borders(name, borderCountry)
+VALUES ('Germany', 'Poland');
+INSERT INTO Borders(name, borderCountry)
+VALUES ('Germany', 'Czech Republic');
+INSERT INTO Borders(name, borderCountry)
+VALUES ('Germany', 'Austria');
+INSERT INTO Borders(name, borderCountry)
+VALUES ('Germany', 'France');
+INSERT INTO Borders(name, borderCountry)
+VALUES ('Germany', 'Switzerland');
+
+/*Netherlands*/
+
+INSERT INTO Borders(name, borderCountry)
+VALUES ('Netherlands', 'Germany');
+INSERT INTO Borders(name, borderCountry)
+VALUES ('Netherlands', 'Belgium');
+
+/*Belgium*/
+
+INSERT INTO Borders(name, borderCountry)
+VALUES ('Belgium', 'Netherlands');
+INSERT INTO Borders(name, borderCountry)
+VALUES ('Belgium', 'Germany');
+INSERT INTO Borders(name, borderCountry)
+VALUES ('Belgium', 'Luxemburg');
+INSERT INTO Borders(name, borderCountry)
+VALUES ('Belgium', 'France');
+
+/*Luxemburg*/
+
+INSERT INTO Borders(name, borderCountry)
+VALUES ('Luxemburg', 'Belgium');
+INSERT INTO Borders(name, borderCountry)
+VALUES ('Luxemburg', 'France');
+INSERT INTO Borders(name, borderCountry)
+VALUES ('Luxemburg', 'Germany');
+
+/*Poland*/
+
+INSERT INTO Borders(name, borderCountry)
+VALUES ('Poland', 'Lithuania');
+INSERT INTO Borders(name, borderCountry)
+VALUES ('Poland', 'Germany');
+INSERT INTO Borders(name, borderCountry)
+VALUES ('Poland', 'Czech Republic');
+INSERT INTO Borders(name, borderCountry)
+VALUES ('Poland', 'Slovakia');
+INSERT INTO Borders(name, borderCountry)
+VALUES ('Poland', 'Ukraine');
+INSERT INTO Borders(name, borderCountry)
+VALUES ('Poland', 'Belarus');
+
+/*Czech Republic*/
+
+INSERT INTO Borders(name, borderCountry)
+VALUES ('Czech Republic', 'Germany');
+INSERT INTO Borders(name, borderCountry)
+VALUES ('Czech Republic', 'Poland');
+INSERT INTO Borders(name, borderCountry)
+VALUES ('Czech Republic', 'Slovakia');
+INSERT INTO Borders(name, borderCountry)
+VALUES ('Czech Republic', 'Austria');
+
+/*Austria*/
+
+INSERT INTO Borders(name, borderCountry)
+VALUES ('Austria', 'Austria');
+INSERT INTO Borders(name, borderCountry)
+VALUES ('Austria', 'Austria');
+INSERT INTO Borders(name, borderCountry)
+VALUES ('Austria', 'Austria');
+
+/*France*/
+
+INSERT INTO Borders(name, neighbor)
+VALUES('France','Luxemburg');
+INSERT INTO Borders(name, neighbor)
+VALUES('France','Belgium');
+INSERT INTO Borders(name, neighbor)
+VALUES('France','Switzerland');
+INSERT INTO Borders(name, neighbor)
+VALUES('France','Germany');
+
+/*Switzerland*/
+
+INSERT INTO Borders(name, neighbor)
+VALUES('Switzerland', 'Austria');
+INSERT INTO Borders(name, neighbor)
+VALUES('Switzerland','Germany');
+INSERT INTO Borders(name, neighbor)
+VALUES('Switzerland','France');
+
+/*Germany's neighbors.*/
+SELECT neighbor FROM Borders WHERE name = 'Germany';
+/*Countries with over 35,000,000 people.*/
+SELECT name FROM Countries WHERE population > 35000000;
+/*Germany's neighbors with over 35,000,000 people.*/
+SELECT * FROM Countries
+INNER JOIN Borders ON Countries.name = Borders.name
+WHERE population > 35000000 AND Borders.neighbor = 'Germany';
