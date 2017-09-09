@@ -8,31 +8,7 @@
  Austria
  France
  Switzerland
- Netherlands
- Belgium
- Luxemburg
- Poland
- Czech Republic
- Austria
- France
- Switzerland
- Netherlands
- Belgium
- Luxemburg
- Poland
- Czech Republic
- Austria
- France
- Switzerland
- Netherlands
- Belgium
- Luxemburg
- Poland
- Czech Republic
- Austria
- France
- Switzerland
-(32 rows)
+(8 rows)
 
 
   name
@@ -43,11 +19,8 @@
 (3 rows)
 
 
-  name  | latitude | longitude |  area  | population |      gdp      | gdpyear | id  |  name  | bordercountry
---------+----------+-----------+--------+------------+---------------+---------+-----+--------+---------------
- Poland |     2000 |      5200 | 312685 |   38476269 | 1052000000000 |    2016 | 100 | Poland | Germany
- Poland |     2000 |      5200 | 312685 |   38476269 | 1052000000000 |    2016 |  75 | Poland | Germany
- Poland |     2000 |      5200 | 312685 |   38476269 | 1052000000000 |    2016 |  49 | Poland | Germany
- Poland |     2000 |      5200 | 312685 |   38476269 | 1052000000000 |    2016 |  19 | Poland | Germany
- France |      200 |      4600 | 643801 |   67106161 | 2699000000000 |    2016 | 111 | France | Germany
-(5 rows)
+  name  | latitude | longitude |  area  | population |      gdp      | gdpyear | id |  name  | bordercountry
+--------+----------+-----------+--------+------------+---------------+---------+----+--------+---------------
+ Poland |     2000 |      5200 | 312685 |   38476269 | 1052000000000 |    2016 | 18 | Poland | Germany
+ France |      200 |      4600 | 643801 |   67106161 | 2699000000000 |    2016 | 29 | France | Germany
+(2 rows)
