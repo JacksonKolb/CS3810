@@ -97,17 +97,9 @@ VALUES ('Luxemburg', 'Germany');
 /*Poland*/
 
 INSERT INTO Borders(name, borderCountry)
-VALUES ('Poland', 'Lithuania');
-INSERT INTO Borders(name, borderCountry)
 VALUES ('Poland', 'Germany');
 INSERT INTO Borders(name, borderCountry)
 VALUES ('Poland', 'Czech Republic');
-INSERT INTO Borders(name, borderCountry)
-VALUES ('Poland', 'Slovakia');
-INSERT INTO Borders(name, borderCountry)
-VALUES ('Poland', 'Ukraine');
-INSERT INTO Borders(name, borderCountry)
-VALUES ('Poland', 'Belarus');
 
 /*Czech Republic*/
 
@@ -116,42 +108,40 @@ VALUES ('Czech Republic', 'Germany');
 INSERT INTO Borders(name, borderCountry)
 VALUES ('Czech Republic', 'Poland');
 INSERT INTO Borders(name, borderCountry)
-VALUES ('Czech Republic', 'Slovakia');
-INSERT INTO Borders(name, borderCountry)
 VALUES ('Czech Republic', 'Austria');
 
 /*Austria*/
 
 INSERT INTO Borders(name, borderCountry)
-VALUES ('Austria', 'Austria');
+VALUES ('Austria', 'Germany');
 INSERT INTO Borders(name, borderCountry)
-VALUES ('Austria', 'Austria');
+VALUES ('Austria', 'Czech Republic');
 INSERT INTO Borders(name, borderCountry)
-VALUES ('Austria', 'Austria');
+VALUES ('Austria', 'Switzerland');
 
 /*France*/
 
-INSERT INTO Borders(name, neighbor)
+INSERT INTO Borders(name, borderCountry)
 VALUES('France','Luxemburg');
-INSERT INTO Borders(name, neighbor)
+INSERT INTO Borders(name, borderCountry)
 VALUES('France','Belgium');
-INSERT INTO Borders(name, neighbor)
+INSERT INTO Borders(name, borderCountry)
 VALUES('France','Switzerland');
-INSERT INTO Borders(name, neighbor)
+INSERT INTO Borders(name, borderCountry)
 VALUES('France','Germany');
 
 /*Switzerland*/
 
-INSERT INTO Borders(name, neighbor)
-VALUES('Switzerland', 'Austria');
-INSERT INTO Borders(name, neighbor)
+INSERT INTO Borders(name, borderCountry)
+VALUES('Switzerland','Austria');
+INSERT INTO Borders(name, borderCountry)
 VALUES('Switzerland','Germany');
-INSERT INTO Borders(name, neighbor)
+INSERT INTO Borders(name, borderCountry)
 VALUES('Switzerland','France');
 
 /*Germany's neighbors.*/
 
-SELECT neighbor FROM Borders WHERE name = 'Germany';
+SELECT borderCountry FROM Borders WHERE name = 'Germany';
 
 /*Countries with over 35,000,000 people.*/
 
@@ -161,4 +151,4 @@ SELECT name FROM Countries WHERE population > 35000000;
 
 SELECT * FROM Countries
 INNER JOIN Borders ON Countries.name = Borders.name
-WHERE population > 35000000 AND Borders.neighbor = 'Germany';
+WHERE population > 35000000 AND Borders.borderCountry = 'Germany';
