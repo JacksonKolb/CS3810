@@ -28,11 +28,23 @@ CREATE TABLE PayerPhoneNumbers(
 	FOREIGN KEY(email) references Payer(email)
 );
 
+CREATE TABLE Cities(
+	cityName VARCHAR(100),
+	state VARCHAR(50),
+	uniqueCityCode INT PRIMARY KEY
+);
+
+CREATE TABLE Airlines(
+	airlineName VARCHAR(100),
+	uniqueAirlineCode INT PRIMARY KEY
+);
+
 CREATE TABLE Flights(
 	uniqueFlightNumber INT PRIMARY KEY,
 	lengthOfFlight INT,
-	originCode INT,
-	destCode INT,
+	uniqueAirlineCode INT references Airlines(uniqueAirlineCode),
+	originCode INT references Cities(uniqueCityCode),
+	destCode INT references Cities(uniqueCityCode),
 	arrivalDate VARCHAR(50),
 	arrivalHour INT,
 	arrivalMin INT,
@@ -73,15 +85,18 @@ CREATE TABLE PassengerAddress(
 
 CREATE TABLE PassengerPhoneNumbers(
 	countryCode INT,
-	localCode INT, 
+	localCode INT,  
 	localNumber INT,
 	email VARCHAR(100),
 	FOREIGN KEY(email) references Payer(email)
 );
 
-CREATE TABLE GoesOn(
+
+
+CREATE TABLE Tickets(
 	uniqueFlightNumber INT references Flights(uniqueFlightNumber),
 	bookingNumber INT references Booking(bookingNumber),
 	passID INT references Passenger(passID)
 	
 );
+
