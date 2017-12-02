@@ -1,0 +1,29 @@
+Airline,Flight_number,Origin,Destination,Departure_date,Departure_time,Arrival_date,Arrival_time,Flight_length
+United,101,Toronto,New York,3/12/2017,1:00am,3/12/2017,4:00am,3 hours 0 minutes
+United,102,Toronto,Chicago,4/2/2017,2:00am,4/2/2017,5:00am,3 hours 0 minutes
+United,103,Toronto,London,5/1/2017,3:00am,5/1/2017,6:00am,3 hours 0 minutes
+United,104,New York,Toronto,3/11/2017,4:00am,3/11/2017,7:00am,3 hours 0 minutes
+United,105,New York,Chicago,9/10/2017,5:00am,9/10/2017,8:00am,3 hours 0 minutes
+United,106,Chicago,Toronto,1/2/2017,6:00am,1/2/2017,9:00am,3 hours 0 minutes
+United,107,Chicago,New York,2/3/2017,7:00am,2/3/2017,10:00am,3 hours 0 minutes
+United,108,London,Toronto,3/4/2017,8:00am,3/4/2017,11:00am,3 hours 0 minutes
+British Airways,109,London,Toronto,4/5/2017,9:00am,4/5/2017,12:00pm,3 hours 0 minutes
+British Airways,110,London,Edinburgh,5/6/2017,10:00am,5/6/2017,1:00pm,3 hours 0 minutes
+British Airways,111,London,Paris,6/7/2017,11:00am,6/7/2017,2:00pm,3 hours 0 minutes
+British Airways,112,London,Nice,7/8/2017,12:00pm,7/8/2017,3:00pm,3 hours 0 minutes
+British Airways,113,Edinburgh,Toronto,8/9/2017,1:00pm,8/9/2017,4:00pm,3 hours 0 minutes
+British Airways,114,Edinburgh,Montreal,9/10/2017,2:00pm,9/10/2017,5:00pm,3 hours 0 minutes
+British Airways,115,Edinburgh,London,10/11/2017,3:00pm,10/11/2017,6:00pm,3 hours 0 minutes
+British Airways,116,Edinburgh,Paris,11/12/2017,4:00pm,11/12/2017,7:00pm,3 hours 0 minutes
+British Airways,117,Edinburgh,Nice,12/13/2017,5:00pm,12/13/2017,8:00pm,3 hours 0 minutes
+British Airways,118,Paris,London,2/1/2017,6:00pm,2/1/2017,9:00pm,3 hours 0 minutes
+British Airways,119,Paris,Edinburgh,3/2/2017,1:00am,3/2/2017,4:00am,3 hours 0 minutes
+British Airways,120,Paris,Nice,4/3/2017,2:00am,4/3/2017,5:00am,3 hours 0 minutes
+British Airways,121,Nice,London,5/4/2017,3:00am,5/4/2017,6:00am,3 hours 0 minutes
+British Airways,122,Nice,Edinburgh,6/5/2017,4:00am,6/5/2017,7:00am,3 hours 0 minutes
+British Airways,123,Nice,Paris,7/6/2017,5:00am,7/6/2017,8:00am,3 hours 0 minutes
+Air Canada,124,Toronto,Montreal,8/7/2017,6:00am,8/7/2017,9:00am,3 hours 0 minutes
+Air Canada,125,Toronto,Edinburgh,9/8/2017,7:00am,9/8/2017,10:00am,3 hours 0 minutes
+Air Canada,126,Monteal,Toronto,10/9/2017,8:00am,10/9/2017,11:00am,3 hours 0 minutes
+Air Canada,127,Monteal,London,11/10/2017,9:00am,11/10/2017,12:00pm,3 hours 0 minutes
+Air Canada,128,Monteal,Edinburgh,12/12/2017,10:00am,12/12/2017,1:00pm,3 hours 0 minutes
