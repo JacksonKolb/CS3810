@@ -57,8 +57,13 @@ public class FlightScheduler {
             state = USERINPUT.nextLine();
             System.out.print("Country: ");
             country = USERINPUT.nextLine();
-            System.out.print("Phone Number: ");
-            phone = USERINPUT.nextLine();
+            System.out.print("Phone number information: ");
+            System.out.println("Country code:");
+            countryCode = Integer.parseInt(USERINPUT.nextLine());
+            System.out.println("Area code:");
+            localCode = Integer.parseInt(USERINPUT.nextLine());
+            System.out.println("Local number:");
+            localNumber = Integer.parseInt(USERINPUT.nextLine());
             System.out.print("5 Digit Zip Code: ");
             zipCode = Integer.parseInt(USERINPUT.nextLine());
             System.out.print("Email Address: ");
@@ -81,7 +86,7 @@ public class FlightScheduler {
             if (!(isAlpha(state))) {
                 outFile.println(state + " is not a valid state. "
                         + "a-z, A-Z only.");
-                error = true;
+                error = true; 
             }
             if (!(phone.matches(REGEXSTR))) {
                 outFile.println(phone + " is not a valid "
@@ -158,44 +163,17 @@ public class FlightScheduler {
         }
     }
 
-    private static void insertPassengerData() {
-        try {
-            openConnection();
-            conn.setAutoCommit(false);
-            statement = conn.createStatement();
-            String insertPassenger = "INSERT INTO Passenger (passFirstName, "
-                    + "passLastName, passEmail) +"
-                    + "VALUES ('" + passFirst + "', '" + passLast + "', '" + passEmail + ",)";
-            statement.executeUpdate(insertPassenger);
-            String insertPassengerPhone = "INSERT INTO PassengerPhoneNumbers "
-                    + "( passPhone ) +"
-                    + "VALUES ('" + passPhone + "')";
-            statement.executeUpdate(insertPassengerPhone);
-            String insertPassengerAddress = "INSERT INTO PassengerAddress (passCountry,"
-                    + " passCity, passState, passPostalCode, passStreesAddress) +"
-                    + "VALUES ('" + passCountry + "', '" + passCity + "', '" + passState + ","
-                    + passZipCode + "', '" + passStreetAddress + "',)";
-            statement.executeUpdate(insertPassengerAddress);
-            statement.close();
-            conn.commit();
-            conn.close();
-        } catch (SQLException exception) {
-            System.err.println(exception.getClass().getName() + ": " + exception.getMessage());
-            System.exit(0);
-        }
-    }
-
     private static void insertPayerData() {
         try {
             openConnection();
             conn.setAutoCommit(false);
             statement = conn.createStatement();
-            String insertPayer = "INSERT INTO Payers (Email, firstName, LastName) +"
+            String insertPayer = "INSERT INTO Payers (Email, firstName, lastName) +"
                     + "VALUES ('" + email + "', '" + firstName + "', '" + lastName + ",)";
             statement.executeUpdate(insertPayer);
             String insertPayerPhone = "INSERT INTO PayerPhoneNumbers "
-                    + "(phoneNumber) +"
-                    + "VALUES ('" + phone + "')";
+                    + "(countryCode, localCode, localNumber) +"
+                    + "VALUES ('" + countryCode + "', '" + localCode + "', '" + localNumber + ",)";
             statement.executeUpdate(insertPayerPhone);
             String insertPayerAddress = "INSERT INTO PayerAddress (payerCountry,"
                     + " payerCity, payerState, payerPostalCode, payerStreesAddress) +"
