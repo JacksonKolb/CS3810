@@ -12,11 +12,11 @@ CREATE TABLE Payer (
 );
 
 CREATE TABLE PayerAddress (
-	city VARCHAR(30),
-	state VARCHAR(30),
-	country VARCHAR(30),
-	areaCode INT,
-	streetAddress VARCHAR(100),
+	payerCity VARCHAR(30),
+	payerState VARCHAR(30),
+	payerCountry VARCHAR(30),
+	zipCode INT,
+	payerStreetAddress VARCHAR(100),
 	email VARCHAR(100) references Payer(email)
 );
 
@@ -74,11 +74,11 @@ CREATE TABLE Passenger(
 );
 
 CREATE TABLE PassengerAddress(
-	country VARCHAR(25),
-	city VARCHAR(25),
-	state VARCHAR(25),
-	postalCode INT,
-	streetAddress VARCHAR(100),
+	passCountry VARCHAR(25),
+	passCity VARCHAR(25),
+	passState VARCHAR(25),
+	passPostalCode INT,
+	passStreetAddress VARCHAR(100),
 	email VARCHAR(100) references Payer(email)
 );
 
@@ -97,3 +97,10 @@ CREATE TABLE Tickets(
 	
 );
 
+CREATE TABLE Airports(
+	airportCode INT,
+	airportName VARCHAR(50),
+	cityName VARCHAR(50),
+	stateName VARCHAR(50),
+	PRIMARY KEY (airportCode)
+);
