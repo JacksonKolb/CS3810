@@ -1,3 +1,12 @@
+/*
+CS 3810 - Database
+Jackson Kolb and Max Morrison (Help from Keira)
+HW6
+DUE Before 12/7 
+*/
+
+
+
 package flightquery;
 
 import java.util.*;
