@@ -1,30 +1,4 @@
 
-Skip to content
-This repository
-
-    Pull requests
-    Issues
-    Marketplace
-    Explore
-
-    @JacksonKolb94
-
-0
-0
-
-    1
-
-MaxMorrison6/CS3810-Morrison
-Code
-Issues 0
-Pull requests 0
-Projects 0
-Wiki
-Insights
-CS3810-Morrison/HW4Final/HW3CopyFinal.sql
-a249e7c 12 days ago
-@MaxMorrison6 MaxMorrison6 Add files via upload
-24 lines (15 sloc) 950 Bytes
 /*
 CS 3810 - Database
 Jackson Kolb and Max Morrison
@@ -50,17 +24,4 @@ Help from Emily Lupini with keys and contratiants
 
 \COPY distance FROM 'C:\School\Semester4Fall2017\CS3810\Lupini\distance.csv' CSV HEADER;
 
-    © 2017 GitHub, Inc.
-    Terms
-    Privacy
-    Security
-    Status
-    Help
-
-    Contact GitHub
-    API
-    Training
-    Shop
-    Blog
-    About
 
