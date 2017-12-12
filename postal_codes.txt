@@ -1,0 +1,7 @@
+"last","first","postalcode"
+"Cain", "David","75001"
+"Coryell", "Christian","56301"
+"Narkewicz", "David","05060"
+"Santos", "Edirlei","92354"
+"Max", "Morrison", "80112"
+"Jack", "Kolb", "80222"
